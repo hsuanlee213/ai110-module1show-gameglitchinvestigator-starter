@@ -49,8 +49,11 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 4. What did you learn about Streamlit and state?
 
 - In your own words, explain why the secret number kept changing in the original app.
+  Streamlit reruns the entire script whenever a user interacts with the app, so important values must be stored in st.session_state. In the original app.py, the secret number was initialized correctly, but it was later reset or converted to a string in other parts of the code. Converting the secret to a string caused lexicographic comparisons instead of numeric comparisons (for example, "9" > "10"), which led to incorrect hints and inconsistent behavior. To fix this, I moved the comparison logic into logic_utils.check_guess and ensured all comparisons use numeric values. I also removed the string conversion and updated the New Game logic to reset secret, attempts, score, status, and history together, ensuring the game state remains consistent.
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+  In Streamlit, the whole program runs again every time the user interacts with the app, like pressing a button or submitting a guess. This is called a “rerun.” If we only use normal variables, their values would reset each time the program reruns. To solve this, Streamlit provides st.session_state, which acts like memory for the app. It stores important values so they stay the same across interactions, even though the script keeps running again.
 - What change did you make that finally gave the game a stable secret number?
+  The change that finally gave the game a stable secret number was ensuring that the secret value was stored and managed correctly in st.session_state. I removed the code that converted the secret number to a string and made sure it was always treated as an integer. I also ensured that the secret number is only initialized when "secret" is not already in st.session_state. This prevents the value from being reset during Streamlit reruns, allowing the secret number to remain stable throughout the game.
 
 ---
 
@@ -58,5 +61,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+    One strategy I want to reuse is making small changes and pushing them to GitHub frequently so that progress is tracked and mistakes can be easily reversed. I also learned to use the @codebase context in Copilot to help the AI understand the full project when suggesting fixes.
 - What is one thing you would do differently next time you work with AI on a coding task?
+  Next time, I would give more specific prompts when working with AI. AI can sometimes modify a large amount of code from a very small instruction, so focusing on a smaller section of the code and clearly describing the task can help keep the changes more controlled and easier to review.
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+  This project showed me that AI-generated code can be helpful and often high quality, but it still requires careful review. It is important to understand the logic behind the code instead of relying on AI completely.
