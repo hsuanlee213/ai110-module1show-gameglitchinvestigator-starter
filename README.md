@@ -43,7 +43,8 @@ Finally, after connecting app.py to the corrected logic in logic_utils.py, the S
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [x] [Insert a screenshot of your fixed, winning game here]
+      ![Game Demo](win_game.png)
 
 ## 🚀 Stretch Features
 
