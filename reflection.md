@@ -18,9 +18,11 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 2. How did you use AI as a teammate?
 
-- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)? ChatGPT
+- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)? ChatGPT and copilot
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+  For 'if guess > secret:' return in app.py, AI suggests : Message is reversed here. When guess > secret the player should be told to go LOWER (because their guess is too high). The return value currently says "Too High" correctly, but the message text "Go HIGHER!" is incorrect. Which is obvious when reading the corresponding code section.
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+  At first glance, I did not see any suggestions that were incorrect or misleading. However, if I want to refactor the code or make my own arrangement, I will need to give more specific instructions on how to refactor the existing code.
 
 ---
 
