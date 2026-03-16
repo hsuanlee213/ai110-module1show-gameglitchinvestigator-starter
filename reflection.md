@@ -18,10 +18,15 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 2. How did you use AI as a teammate?
 
-- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)? ChatGPT and copilot
+- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+-
+- ChatGPT and copilot
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+
   For 'if guess > secret:' return in app.py, AI suggests : Message is reversed here. When guess > secret the player should be told to go LOWER (because their guess is too high). The return value currently says "Too High" correctly, but the message text "Go HIGHER!" is incorrect. Which is obvious when reading the corresponding code section.
+
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+
   At first glance, I did not see any suggestions that were incorrect or misleading. However, if I want to refactor the code or make my own arrangement, I will need to give more specific instructions on how to refactor the existing code.
 
 ---
@@ -29,9 +34,15 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+  I run the game after each fix to make sure it reflects my updated code logic.
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+
+  I used copilot to run the pytest for the logic of score text (go higher / go lower). It shows result match.
+
 - Did AI help you design or understand any tests? How?
+
+  It helps me quickly identify where the logic error is, and it helps me quickly adjust to
 
 ---
 

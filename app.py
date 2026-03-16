@@ -122,8 +122,12 @@ if new_game:
     # FIXME: New Game resets `attempts` and `secret`, but does NOT reset `score`, `status`,
     # or `history`. That is why the score persists across new games and the UI may not
     # return to an initial playing state.
-    st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    # Reset session state to initial game values
+    st.session_state.attempts = 1
+    st.session_state.secret = random.randint(low, high)
+    st.session_state.score = 0
+    st.session_state.status = "playing"
+    st.session_state.history = []
     st.success("New game started.")
     st.rerun()
 
