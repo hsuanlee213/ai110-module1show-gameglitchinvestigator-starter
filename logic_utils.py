@@ -1,5 +1,6 @@
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
+    # FIX: Refactored into logic_utils.py using Copilot; keeps difficulty mapping centralized.
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
@@ -15,6 +16,7 @@ def parse_guess(raw: str):
 
     Returns: (ok: bool, guess_int: int | None, error_message: str | None)
     """
+    # FIX: Copilot helped refactor parsing logic from app.py into a testable helper.
     if raw is None:
         return False, None, "Enter a guess."
 
@@ -67,6 +69,7 @@ def check_guess(guess, secret):
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
     """Update score based on outcome and attempt number."""
+    # FIX: Copilot-assisted refactor to centralize score logic and remove duplication.
     if outcome == "Win":
         points = 100 - 10 * (attempt_number + 1)
         if points < 10:

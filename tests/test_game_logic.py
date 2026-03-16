@@ -1,3 +1,4 @@
+# FIX: Added tests for refactored helpers (Copilot-assisted additions).
 from logic_utils import (
     check_guess,
     parse_guess,

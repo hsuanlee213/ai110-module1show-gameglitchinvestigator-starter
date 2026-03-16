@@ -6,6 +6,7 @@ from logic_utils import (
     parse_guess,
     update_score,
 )
+# FIX: Refactored logic into logic_utils.py using Copilot to centralize game logic.
  
 
 st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
@@ -79,7 +80,7 @@ if new_game:
     # FIXME: New Game resets `attempts` and `secret`, but does NOT reset `score`, `status`,
     # or `history`. That is why the score persists across new games and the UI may not
     # return to an initial playing state.
-    # Reset session state to initial game values
+    # FIX: Reset all session state keys so New Game truly restarts. (Copilot-guided fix.)
     st.session_state.attempts = 1
     st.session_state.secret = random.randint(low, high)
     st.session_state.score = 0
